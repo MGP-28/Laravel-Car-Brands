@@ -1,6 +1,6 @@
 @extends('master.main')
 
 @section('content')
-    @component('components.brand.formEdit', ['brand' => $brand])
+    @component('components.car.formEdit', ['brands' => $brands, 'car' => $car])
     @endcomponent
 @endsection

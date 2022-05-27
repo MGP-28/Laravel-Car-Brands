@@ -1,5 +1,5 @@
 <div class="container">
-    @component('components.title.title',['text' => 'BRANDS'])
+    @component('components.title.title',['text' => 'CARS'])
     @endcomponent
     @if (session('status'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -10,14 +10,14 @@
         </div>
     @endif
     <table class="table border rounded table-striped">
-        @component('components.table.header',['headerData' => ['ID','Name','Vehicles', 'Actions']])
+        @component('components.table.header',['headerData' => ['ID','Registration','Brand', 'Year of Manufacture', 'Color','Actions']])
         @endcomponent
-        @foreach($brands as $brand)
-            @component('components.brand.rowIndex',['brand' => $brand])
+        @foreach($cars as $car)
+            @component('components.car.rowIndex',['car' => $car])
             @endcomponent
         @endforeach
     </table>
     <div class="container d-flex justify-content-center">
-        {{$brands->links()}}
+        {{$cars->links()}}
     </div>
 </div>

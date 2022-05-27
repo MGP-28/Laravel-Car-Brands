@@ -1,5 +1,5 @@
 <div class="container">
-    @component('components.title.title',['text' => 'PLAYERS'])
+    @component('components.title.title',['text' => 'BRANDS'])
     @endcomponent
     @if (session('status'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -10,16 +10,14 @@
         </div>
     @endif
     <table class="table border rounded table-striped">
-        @component('components.table.header',['headerData' => ['ID','Name','Address','Retired','Actions']])
+        @component('components.table.header',['headerData' => ['ID','Name','Vehicles', 'Actions']])
         @endcomponent
-        @foreach($players as $player)
-            @component('components.player.rowIndex',['brand' => $player])
+        @foreach($brands as $brand)
+            @component('components.brand.rowIndex',['brand' => $brand])
             @endcomponent
         @endforeach
     </table>
-    @component('components.button.buttonDeleteAll',['text' => 'PLAYERS'])
-    @endcomponent
     <div class="container d-flex justify-content-center">
-        {{$players->links()}}
+        {{$brands->links()}}
     </div>
 </div>

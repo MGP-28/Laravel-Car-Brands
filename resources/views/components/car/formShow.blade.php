@@ -1,36 +1,58 @@
 <div class="container">
-    @component('components.title.title',['text' => 'Show brand'])
+    @component('components.title.title',['text' => 'SHOW CAR'])
     @endcomponent
-    <form method="" action="" class="border rounded p-4">
-        @csrf
+    <form class="border rounded p-4">
         <div class="form-group">
-            <label for="id">ID</label>
+            <label for="registration">Registration</label>
             <input
-                disabled
                 type="text"
-                id="id"
-                name="id"
-                autocomplete="id"
+                id="registration"
+                name="registration"
                 class="form-control"
-                value="{{ $brand->id }}"
-                required
-                aria-describedby="idHelp"
+                value="{{ $car->registration }}"
+                disabled
+                aria-describedby="registrationHelp"
             >
         </div>
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="brand">Brand</label>
             <input
-                disabled
                 type="text"
-                id="name"
-                name="name"
-                autocomplete="name"
+                id="brand"
+                name="brand"
                 class="form-control"
-                value="{{ $brand->name }}"
-                required
-                aria-describedby="nameHelp"
+                value="{{ $car->brand->name }}"
+                disabled
+                aria-describedby="brandHelp"
+            >
+        </div>
+        <div class="form-group">
+            <label for="year_of_manufacture">Year of Manufacture</label>
+            <input
+                type="text"
+                id="year_of_manufacture"
+                name="year_of_manufacture"
+                class="form-control"
+                value="{{ $car->year_of_manufacture }}"
+                disabled
+                aria-describedby="year_of_manufactureHelp"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="color">Color</label>
+            <input
+                type="text"
+                id="color"
+                name="color"
+                class="form-control"
+                value="{{ $car->color }}"
+                disabled
+                aria-describedby="colorHelp"
             >
             <small id="nameHelp" class="form-text text-muted"></small>
         </div>
+
+        <a class="btn btn-primary" href="{{url('cars')}}">Back</a>
     </form>
 </div>

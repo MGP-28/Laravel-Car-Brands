@@ -1,6 +1,6 @@
 @extends('master.main')
 
 @section('content')
-    @component('components.brand.tableIndex',['brands' => $brands])
+    @component('components.car.tableIndex',['cars' => $cars])
     @endcomponent
 @endsection

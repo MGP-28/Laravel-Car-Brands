@@ -1,15 +1,17 @@
 <tr>
-    <td class="text-center align-middle">{{$player->id}}</td>
-    <td class="text-center align-middle">{{$player->name}}</td>
-    <td class="text-center align-middle">{{$player->address}}</td>
+    <td class="text-center align-middle">{{$brand->id}}</td>
+    <td class="text-center align-middle">{{$brand->name}}</td>
     <td class="text-center align-middle">
-        @if($player->retired) <i class="bi bi-check-circle text-success h2"></i>
-        @else <i class="bi bi-x-circle text-danger h2"></i>
+        @if($brand->cars->count() == 0)
+            <span>No registered vehicles</span>
         @endif
+        @foreach($brand->cars as $car)
+            <span>{{$car->registration}}</span><br>
+        @endforeach
     </td>
     <td>
-        <div class="d-flex justify-content-around">
-            @component('components.player.buttonsRowIndex',['brand' => $player])
+        <div class="d-flex align-self-center justify-content-around align-items-center h-100">
+            @component('components.brand.buttonsRowIndex',['brand' => $brand])
             @endcomponent
         </div>
     </td>
